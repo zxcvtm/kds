@@ -1,0 +1,38 @@
+.list {
+    display: flex;
+  	flex-direction: column;
+    font-family: febrero;
+    margin: 20px 3px;
+}
+
+.table {
+    display: flex;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    flex-basis: 100%;
+}
+.column:last-child {
+    border-left: 0px solid black;
+}
+.row {
+    padding: 0px 3px 0px 10px;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+}
+.row:last-child {
+    border-bottom: none;
+}
+.row:nth-child(2n) {
+    background-color: #dddddd;
+}
+span {
+    font-size: .9rem;
+}
+h3 {
+    font-size: 1rem;
+    margin: 5px 0;
+}

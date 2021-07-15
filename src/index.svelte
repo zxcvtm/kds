@@ -1,24 +1,13 @@
 <svelte:options tag="svelte-custom-element" />
 
 <script>
-  import { createEventDispatcher, onDestroy, onMount } from 'svelte'
-  import { fade } from 'svelte/transition'
-  import { isLoading, t, locale } from 'svelte-i18n'
-  import setupI18N from './lib/i18n'
-  import Clock from './clock/Clock.svelte'
+  import { onDestroy, onMount } from 'svelte'
+  import List from './List/List.svelte'
+  import Header from './Header/Header.svelte'
+  import Footer from './Footer/Footer.svelte'
 
   export let title = 'Hello from component!!'
   let initialized = false
-  let visible = true
-
-  const dispatch = createEventDispatcher()
-
-  const unsuscribeLangChange = locale.subscribe(lang => {
-    if (lang) {
-      dispatch('language-change', lang)
-    }
-  })
-
   const fontStyleNode = document.createElement('link')
 
   onMount(() => {
@@ -30,40 +19,49 @@
       '//fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap'
     document.head.appendChild(fontStyleNode)
 
-    setupI18N()
     initialized = true
   })
 
   onDestroy(() => {
-    unsuscribeLangChange()
-
     // HACK: Font import doesn't work inside shadow-dom.
     document.head.removeChild(fontStyleNode)
   })
 
-  const changeLang = lang => () => locale.set(lang)
+  const columns = [{
+    name: 'Nº orden: 123456',
+    items: [{
+      name: 'Element 1',
+      subItems: ['subitem 1', 'subitem 2', 'subitem 3', 'subitem 4']
+    }, {
+      name: 'Element 2',
+      subItems: ['subitem 1', 'subitem 2', 'subitem 3', 'subitem 4']
+    }]
+  }, {
+    name: 'Nº orden: 654321',
+    items: [{
+      name: 'Element 1',
+      subItems: ['subitem 1', 'subitem 2', 'subitem 3', 'subitem 4']
+    }, {
+      name: 'Element 2',
+      subItems: ['subitem 1', 'subitem 2', 'subitem 3', 'subitem 4']
+    }]
+  }];
 </script>
-
-{#if $isLoading || !initialized}
-  <p>Please wait...</p>
-{:else}
-  <div class="component-styles-wrapper">
-    <h1>{title}</h1>
-
-    <p>{$t('text:example-paragraph')}</p>
-
-    <button on:click={changeLang('en')}>EN</button>
-    <button on:click={changeLang('es')}>ES</button>
-
-    <button on:click={() => (visible = !visible)}>Show/hide clocky</button>
-
-    {#if visible}
-      <div class="clock-container" transition:fade>
-        <Clock />
-      </div>
-    {/if}
-  </div>
-{/if}
+<div class="body">
+    <Header status='stop'/>
+    <List columns={columns}/>
+    <div class="footer">
+        <Footer name='Renacin Smapina' />
+    </div>
+</div>
 
 <style global type="text/scss" lang="scss" src="./index.scss">
+.body {
+   height: 100vh;
+   display:flex;
+   flex-direction: column;
+}
+.footer {
+  margin-top:auto;
+}
 </style>

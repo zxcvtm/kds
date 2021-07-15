@@ -1,0 +1,42 @@
+main {
+    display:flex;
+    background-color: #00695f;
+    color: white;
+    justify-content: center;
+    height: 100vh;
+	}
+
+	h1 {
+    flex: 0.2;
+		color: white;
+		font-size: 2.5rem;
+		font-weight: 100;
+	}
+
+  form {
+    display:flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin: 4rem 0 4rem 0;
+  }
+
+  .form-inputs {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .form-inputs input {
+    caret-color: #d15833;
+  }
+
+  .form-inputs button {
+    background-color: #e86c3c;
+    color: white;
+    border: none;
+    border-bottom: 4px solid #d15833;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    margin-bottom: 2rem;
+	}

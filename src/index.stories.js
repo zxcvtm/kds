@@ -2,13 +2,6 @@ import CustomElement from './index.svelte'
 
 export default { title: 'CustomElement' }
 
-export const CustomElementStory = () => ({
+export const Default = () => ({
   Component: CustomElement,
-})
-
-export const CustomElementStoryWithProps = () => ({
-  Component: CustomElement,
-  props: {
-    title: 'Hello from props!!',
-  },
 })
