@@ -1,5 +1,5 @@
 {
-  "name": "svelte-custom-element",
+  "name": "kds",
   "version": "0.1.0",
   "description": "",
   "main": "dist/svelte-custom-element.js",
@@ -54,17 +54,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redradix/svelte-custom-element-boilerplate.git"
+    "url": "git+https://github.com/zxcvtm/kds.git"
   },
   "keywords": [
     "svelte",
     "custom-elements",
     "boilerplate"
   ],
-  "author": "monkeyandres",
+  "author": "zxcvtm",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/redradix/svelte-custom-element-boilerplate/issues"
+    "url": "https://github.com/zxcvtm/kds/issues"
   },
-  "homepage": "https://github.com/redradix/svelte-custom-element-boilerplate#readme"
+  "homepage": "https://github.com/zxcvtm/kds#readme"
 }
