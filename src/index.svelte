@@ -51,6 +51,10 @@
     <Header status='stop'/>
     <List columns={columns}/>
     <div class="footer">
+        <div class="button">
+            <button on:click={() => alert("siguiente")} class="green">Siguiente</button>
+            <button on:click={() => alert("parar")} class="red">Parar</button>
+        </div>
         <Footer name='Renacin Smapina' />
     </div>
 </div>
@@ -64,4 +68,25 @@
 .footer {
   margin-top:auto;
 }
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button {
+    margin-bottom: 1rem;
+    width: 300px;
+    font-size: 1rem;
+}
+.red {
+    background-color: red;
+    border-color: red;
+    color: white;
+}
+.green {
+    background-color: green;
+    border-color: green;
+    color: white;
+}
+
 </style>

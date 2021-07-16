@@ -6,6 +6,7 @@ module.exports = {
     '@storybook/addon-actions/register',
     '@storybook/addon-viewport/register',
     '@storybook/addon-storysource',
+    '@storybook/addon-controls'
   ],
   webpackFinal: async (config, { configType }) => {
     let j
